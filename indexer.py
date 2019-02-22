@@ -44,7 +44,7 @@ def parse_documents():
             inv_idx = {}
             i = 0
         print('Successfully parsed:' , doc)
-    if i < UPDATEFREQ:
+    if i > 0 and i < UPDATEFREQ:
         update_index(conn,inv_idx)
             
 def update_index(conn,idx):
