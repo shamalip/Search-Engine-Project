@@ -1,6 +1,6 @@
-# Search_Engine_Project (Development in progress)
+# UCI Domain search (Development in progress)
 
-A search functionality for the crawled data in from the ics.uci.edu domain.
+A search functionality on the crawled data in from the ics.uci.edu domain.
 
 indexer.py - generates and stores Inverted Index in mongoDB.
 Dependencies - 
