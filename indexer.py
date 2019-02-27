@@ -34,7 +34,7 @@ def get_file_list(full_file_path):
     return content
 
 def get_out_urls_as_doc(parsed_html):
-    return list(set(parsed_html.find_all('a', href=True)))
+    return parsed_html.find_all('a', href=True)
 
 def extract_weighted_strings(html):
     weighted_strings = []
