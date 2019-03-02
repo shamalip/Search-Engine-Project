@@ -1,0 +1,60 @@
+input[type="text"] {      background: transparent;
+    border: 1px solid #4CAF50;
+    border-radius: 25px;
+    bottom: 0;
+    box-sizing: border-box;
+    left: 0;
+    margin: 0;
+    outline: none;
+    padding: 0 8px;
+    height: 30px;
+    width: 50%;
+    padding: 25px;
+    font-size: 20px;
+    margin-left: 26%;
+}
+
+h1{
+    margin: 1em 0 0.5em 0;
+    color: green;
+    font-weight: normal;
+    font-family: 'Ultra', sans-serif;
+    font-size: 36px;
+    line-height: 42px;
+    text-transform: uppercase;
+    text-shadow: 0 2px white, 0 3px #777;
+    text-align: center;
+}
+
+button{
+
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 38%;
+    width: 25%;
+    margin-top: 20px;
+    border-radius: 25px;
+
+}
+
+
+h3{
+    font-size: 18px;
+    font-weight: normal;
+    color: #1a0dab;
+    font-family: 'Roboto',arial,sans-serif;
+    line-height: 1.2;
+    text-align: left;
+    padding-left: 2%;
+}
+
+cite{
+    font-size: smaller;
+    color: green;
+}
