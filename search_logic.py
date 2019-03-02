@@ -6,12 +6,13 @@ import configparser
 import numpy as np
 from math import log10
 from sklearn.metrics.pairwise import cosine_similarity
+import tldextract
 
 config = configparser.RawConfigParser()
 config.read('config.properties')
 dburl = config.get('DB properties', 'DBCONNECTION')
 MAX_RESULTS_TO_SHOW = int(config.get('Others','MAX_RESULTS'))
-nltk.download('wordnet')
+#nltk.download('wordnet')
 wordnet_lemmatizer = WordNetLemmatizer()
 from bookkeeping import files_map,inv_map
 TOTAL_DOCS = len(files_map)
@@ -44,21 +45,32 @@ Restricts the number of results to configured value and gets formatted result fr
 '''
 def get_docs_from_idx(lst):
 	docs = {}
+	domains = {}
+	hidden = False
 	for k in range(len(lst)):
+		item = lst[k]
+		url = tldextract.extract(files_map[item])
+		domain = url.subdomain
+		if None!= domain:
+			if domain not in domains:
+				domains[domain] = 1
+			else:
+				domains[domain] = domains[domain] + 1
+			if domains[domain] > 4:
+				hidden = True
 		if(len(docs) >= MAX_RESULTS_TO_SHOW):
 			break
-		item = lst[k]
-		docs[item] = get_docs_as_result(item)
+		docs[item] = get_docs_as_result(item,hidden)
 	return docs
 
 '''
 Gets the url, headline to display against each search result.
 '''
-def get_docs_as_result(docid):
+def get_docs_as_result(docid,hidden=False):
     raw_html = open("WEBPAGES_RAW" + "/" + docid, encoding='utf-8')
     t = lxml.html.parse(raw_html)
     url = files_map[docid]
-    search_result = {'url':url ,'title': "Search Result"}
+    search_result = {'url':url ,'hidden': hidden,'title': "Search Result"}
     title = t.find(".//title")
     if None != title:
     	search_result['title'] = title.text
