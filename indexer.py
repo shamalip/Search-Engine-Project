@@ -26,7 +26,7 @@ config.read('config.properties')
 dburl = config.get('DB properties', 'DBCONNECTION')
 wordnet_lemmatizer = WordNetLemmatizer()
 ## grouped to give equal relevance to titles and h1,h2. h3-h6 another weight, etc.
-weighted_tags = [['title','h1','h2'], ['h3','h4','h5','h6'], ['strong','b','em','i','u','a']]
+weighted_tags = [['title'],['h1','h2'], ['h3','h4','h5','h6'], ['strong','b','em','i','u','a']]
 
 def get_file_list(full_file_path):
     with open(full_file_path) as f:
@@ -43,7 +43,7 @@ def extract_weighted_strings(html):
     return weighted_strings
 
 def extract_semantic_weight(word, weighted_strings,keywords):
-    ## since we have 3 weight groups + 1 for rest of html = 4 possible weights.
+    ## since we have 4 weight groups + 1 for rest of html = 5 possible weights.
     max = len(weighted_strings)
     weight = 1 ## plain text
     for i in range(max):
