@@ -6,7 +6,7 @@ indexer.py - generates and stores Inverted Index in mongoDB in a multi-process s
 Dependencies - 
 1. pyMongo,
 2. nltk for tokenization,
-3. BeatifulSoup for parsing html.
+3. BeautifulSoup for parsing html.
 
 bookkeeping.py - reads the json that holds document to url mapping of crawled data. It stores the json as dictionary and also makes the inverse mapping available for use. 
 
@@ -17,3 +17,9 @@ UI - using Flask
 search_app.py- Consists of the rest apis
 
 search_logic.py - performs search and returns the urls
+
+TODO:
+- [] Store position information for multiple word searches
+- [] Cosine similarity -  tf-idf.
+- [] Show partial text in search results showing the place where text appears.
+- [] Utilize the stored weights (per presence in title, headings etc.)
