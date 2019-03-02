@@ -12,3 +12,8 @@ bookkeeping.py - reads the json that holds document to url mapping of crawled da
 
 config.properties
 Holds configurations like DB connection.
+
+UI - using Flask
+search_app.py- Consists of the rest apis
+
+search_logic.py - performs search and returns the urls
