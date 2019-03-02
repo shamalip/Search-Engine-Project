@@ -19,7 +19,8 @@ search_app.py- Consists of the rest apis
 search_logic.py - performs search and returns the urls
 
 TODO:
-- [] Store position information for multiple word searches
-- [] Cosine similarity -  tf-idf.
-- [] Show partial text in search results showing the place where text appears.
-- [] Utilize the stored weights (per presence in title, headings etc.)
+- [ ] Store position information for multiple word searches
+- [ ] Cosine similarity -  tf-idf.
+- [ ] Show partial text in search results showing the place where text appears.
+- [ ] Utilize the stored weights (per presence in title, headings etc.)
+- [ ] Check for index compression
