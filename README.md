@@ -24,4 +24,4 @@ TODO:
 - [ ] Show partial text in search results showing the place where text appears.
 - [x] Utilize the stored weights (per presence in title, headings etc.)
 - [ ] Check for index compression
-- [ ] Show a "show more" link if number of results from a domain are more than configurated limit. (Ensure diversity in results)
+- [x] Show a "show more" link if number of results from a domain are more than configurated limit. (Ensure diversity in results)
